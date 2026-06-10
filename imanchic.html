@@ -1409,12 +1409,12 @@
 <!-- HEADER -->
 <header>
   <div class="header-top">
-    🚚 Envío gratis a todo el país · <span>Pagá en hasta 3 cuotas sin interés</span> · Madera certificada
+    🚚 Envíos a todo el país · <span>Juegos Personalizados</span> · Ventas por mayor y menor
   </div>
   <nav>
     <a onclick="goHome()" class="logo" style="cursor:pointer">
       <div class="logo-circle">
-        <img src="logo-imanchic.png" alt="Imanchic" onerror="this.parentElement.style.background='#C8102E'; this.style.display='none'" />
+        <img src="/static/logo-imanchic.png" alt="Imanchic" onerror="this.parentElement.style.background='#C8102E'; this.style.display='none'" />
       </div>
       <div class="logo-text">
         <h1>Imanchic</h1>
@@ -1456,9 +1456,9 @@
   <div class="hero-content">
     <div class="hero-badge">✨ Aprender jugando</div>
     <h2>
-      Juegos didácticos<br/>
-      hechos con <span class="highlight-red">amor</span><br/>
-      para generar <span class="highlight-yellow">alegría</span>
+      Juegos hechos con <span class="highlight-red">AMOR</span><br/>
+      para atraer <span class="highlight-yellow">ALEGRIA</span><br/>
+      y generar <span class="highlight-red">SONRISAS</span>
     </h2>
     <p>Creamos experiencias educativas con imanes, rompecabezas y piezas de madera para que cada juego sea un momento de conexión en familia.</p>
     <div class="hero-ctas">
@@ -1509,23 +1509,15 @@
 <div class="trust-bar">
   <div class="trust-item">
     <div class="trust-icon">🚚</div>
-    Envío gratis a todo el país
-  </div>
-  <div class="trust-item">
-    <div class="trust-icon">🌳</div>
-    Madera certificada
+    Envíos a todo el país
   </div>
   <div class="trust-item">
     <div class="trust-icon">🎨</div>
-    Pinturas al agua (no tóxicas)
+    Hacemos Juegos Personalizados
   </div>
   <div class="trust-item">
-    <div class="trust-icon">💳</div>
-    3 cuotas sin interés
-  </div>
-  <div class="trust-item">
-    <div class="trust-icon">📦</div>
-    Devolución garantizada
+    <div class="trust-icon">🏪</div>
+    Ventas por mayor y menor
   </div>
 </div>
 
@@ -1562,9 +1554,8 @@
 <!-- PRODUCTS -->
 <section class="products-section" id="productos">
   <div class="section-header">
-    <div class="section-eyebrow">Colección</div>
-    <h2 class="section-title">Nuestros Juegos</h2>
-    <p class="section-sub">Cada pieza diseñada para estimular la imaginación y el aprendizaje.</p>
+    <h2 class="section-title">Juegos Imantados: Escenario y Personajes</h2>
+    <p class="section-sub">Los juegos imantados son una gran herramienta para el desarrollo infantil. Ya que colaboran en el Desarrollo del Lenguaje, estimulan de la Imaginación, incentivan la memoria, la Concentración y la Motricidad Fina.</p>
   </div>
 
   <div class="filters">
@@ -1880,9 +1871,9 @@
         </div>
         <div class="modal-stock"><div class="stock-dot"></div><span id="modalStock"></span></div>
         <div class="modal-features">
-          <div class="modal-feature"><span>✓</span><span>Envío gratis a todo el país</span></div>
-          <div class="modal-feature"><span>✓</span><span>Madera certificada, pinturas al agua</span></div>
-          <div class="modal-feature"><span>✓</span><span>Devolución garantizada</span></div>
+          <div class="modal-feature"><span>✓</span><span>Envíos a todo el país</span></div>
+          <div class="modal-feature"><span>✓</span><span>Hacemos Juegos Personalizados</span></div>
+          <div class="modal-feature"><span>✓</span><span>Ventas por mayor y menor</span></div>
         </div>
         <div class="modal-actions">
           <button class="btn-comprar" onclick="addToCartFromModal()">🛒 Agregar al carrito</button>
@@ -1900,17 +1891,17 @@
   const WA_NUMBER = '5491122442171';
 
   const products = [
-    // ── ESCENARIOS ──
-    { id:0,  name:'Casa y Familia',          category:'escenarios', categoryLabel:'Escenarios', emoji:'🏠',    image:'/static/casa-completo.jpg',     images:['/static/casa-completo.jpg','/static/casa-escenario.jpg','/static/casa-personajes.jpg'],         bg:'linear-gradient(135deg,#ffecd2,#fcb69f)', price:24000, badge:'Más vendido', badgeClass:'',    stars:5, age:'3 a 8 años',  desc:'Escenario magnético con la casa, su familia completa, muebles y accesorios. Perfecta para el juego simbólico y el desarrollo del lenguaje.' },
-    { id:1,  name:'Ciudad y Transporte',     category:'escenarios', categoryLabel:'Escenarios', emoji:'🚗',    image:'/static/ciudad-completo.jpg',    images:['/static/ciudad-completo.jpg','/static/ciudad-escenario.jpg','/static/ciudad-personajes.jpg'],      bg:'linear-gradient(135deg,#a1c4fd,#c2e9fb)', price:24000, badge:null,          badgeClass:null, stars:5, age:'3 a 8 años',  desc:'La ciudad con colectivos, autos, motos, semáforos y personajes. Ideal para aprender sobre el espacio urbano y las normas de tránsito.' },
-    { id:2,  name:'La Plaza',                category:'escenarios', categoryLabel:'Escenarios', emoji:'🌳',    image:'/static/plaza-completo.jpg',     images:['/static/plaza-completo.jpg','/static/plaza-escenario.jpg','/static/plaza-personajes.jpg'],         bg:'linear-gradient(135deg,#d4fc79,#96e6a1)', price:24000, badge:null,          badgeClass:null, stars:5, age:'2 a 6 años',  desc:'El escenario de la plaza con toboganes, hamacas, árboles y amigos. Un clásico para estimular el juego social y la imaginación.' },
-    { id:3,  name:'Dinosaurios',             category:'escenarios', categoryLabel:'Escenarios', emoji:'🦕',    image:'/static/dinos-completo.jpg',     images:['/static/dinos-completo.jpg','/static/dinos-escenario.jpg','/static/dinos-personajes.jpg'],         bg:'linear-gradient(135deg,#f6d365,#fda085)', price:24000, badge:'🔥 Hot',      badgeClass:'hot', stars:5, age:'4 a 10 años', desc:'Viajá al período prehistórico con dinosaurios, cavernícolas y su escenario. T-Rex, Braquiosaurio, Triceratops y más.' },
-    { id:4,  name:'La Granja',               category:'escenarios', categoryLabel:'Escenarios', emoji:'🐄',    image:'/static/granja.jpg',             images:['/static/granja.jpg'],                                                                              bg:'linear-gradient(135deg,#fbc2eb,#a6c1ee)', price:24000, badge:null,          badgeClass:null, stars:5, age:'2 a 7 años',  desc:'El granjero, el gauchito y todos los animales de la granja en su paisaje. Vacas, gallinas, caballos, cerdos y más.' },
-    { id:5,  name:'Selva',                   category:'escenarios', categoryLabel:'Escenarios', emoji:'🦁',    image:'/static/selva-completo.jpg',     images:['/static/selva-completo.jpg','/static/selva-escenario.jpg','/static/selva-personajes.jpg'],         bg:'linear-gradient(135deg,#84fab0,#8fd3f4)', price:24000, badge:null,          badgeClass:null, stars:5, age:'3 a 8 años',  desc:'León, jirafa, elefante, mono, tigre y muchos más en un exuberante escenario selvático.' },
-    { id:6,  name:'Animales',                category:'escenarios', categoryLabel:'Escenarios', emoji:'🐘',    image:'/static/selva-completo.jpg',     images:['/static/selva-completo.jpg','/static/selva-escenario.jpg','/static/selva-personajes.jpg'],         bg:'linear-gradient(135deg,#c3f0ca,#a8edea)', price:24000, badge:null,          badgeClass:null, stars:5, age:'2 a 7 años',  desc:'Escenario con los animales más queridos del reino animal. Ideal para aprender nombres, sonidos y hábitats.' },
-    { id:7,  name:'Espacio',                 category:'escenarios', categoryLabel:'Escenarios', emoji:'🚀',    image:'/static/espacio-completo.jpg',   images:['/static/espacio-completo.jpg','/static/espacio-escenario.jpg','/static/espacio-personajes.jpg'],   bg:'linear-gradient(135deg,#1a1a2e,#16213e)', price:24000, badge:'Nuevo',        badgeClass:'new', stars:5, age:'4 a 10 años', desc:'Cohetes, planetas, astronautas y estrellas en un escenario intergaláctico. Para los pequeños exploradores del universo.' },
-    { id:8,  name:'Príncipes y Princesas',   category:'escenarios', categoryLabel:'Escenarios', emoji:'🏰',    image:'/static/princesas-completo.jpg', images:['/static/princesas-completo.jpg','/static/princesas-escenario.jpg','/static/princesas-personajes.jpg'], bg:'linear-gradient(135deg,#f093fb,#667eea)', price:24000, badge:null,          badgeClass:null, stars:5, age:'3 a 8 años',  desc:'Castillos, príncipes, princesas, caballeros, hadas y unicornios en un escenario de fantasía. Para los más soñadores.' },
-    { id:9,  name:'Barco Pirata',            category:'escenarios', categoryLabel:'Escenarios', emoji:'🏴‍☠️', image:'/static/barco-completo.jpg',     images:['/static/barco-completo.jpg','/static/barco-escenario.jpg','/static/barco-personajes.jpg'],         bg:'linear-gradient(135deg,#4facfe,#00f2fe)', price:24000, badge:null,          badgeClass:null, stars:5, age:'4 a 10 años', desc:'Piratas, tesoros, mapas y alta mar. Un escenario de aventura para los exploradores intrépidos.' },
+    // ── ESCENARIOS (orden alfabético) ──
+    { id:0,  name:'Barco Pirata',                      category:'escenarios', categoryLabel:'Escenarios', emoji:'🏴‍☠️', image:'/static/barco-completo.jpg',     images:['/static/barco-completo.jpg','/static/barco-escenario.jpg','/static/barco-personajes.jpg'],         bg:'linear-gradient(135deg,#4facfe,#00f2fe)', price:24000, badge:null,          badgeClass:null, stars:5, age:'4 a 10 años', desc:'¡Todos a bordo para vivir una gran aventura! El Barco Pirata invita a los niños a crear historias llenas de imaginación. A través de sus personajes, mapas, tesoros y criaturas marinas, los pequeños desarrollan el lenguaje, la creatividad y el juego simbólico. Ubicar los personajes fortalece la motricidad fina, la coordinación ojo-mano y la organización espacial.' },
+    { id:1,  name:'Casa y Familia',                    category:'escenarios', categoryLabel:'Escenarios', emoji:'🏠',    image:'/static/casa-completo.jpg',     images:['/static/casa-completo.jpg','/static/casa-escenario.jpg','/static/casa-personajes.jpg'],         bg:'linear-gradient(135deg,#ffecd2,#fcb69f)', price:24000, badge:'Más vendido', badgeClass:'',    stars:5, age:'3 a 8 años',  desc:'A crear historias de Familia. La Casa y la Familia invitan a los niños a recrear situaciones cotidianas y compartir momentos en familia. Los pequeños desarrollan el lenguaje, expresan emociones y comprenden diferentes formas de convivencia. La inclusión de un niño en silla de ruedas favorece la empatía, el respeto y la valoración de la diversidad.' },
+    { id:2,  name:'Ciudad y Transportes',              category:'escenarios', categoryLabel:'Escenarios', emoji:'🚗',    image:'/static/ciudad-completo.jpg',    images:['/static/ciudad-completo.jpg','/static/ciudad-escenario.jpg','/static/ciudad-personajes.jpg'],      bg:'linear-gradient(135deg,#a1c4fd,#c2e9fb)', price:24000, badge:null,          badgeClass:null, stars:5, age:'3 a 8 años',  desc:'Descubrimos cómo movernos. Autos, colectivos, avión y helicóptero convierten la ciudad en un escenario lleno de posibilidades. Los niños crean recorridos, organizan viajes y aprenden sobre los medios de transporte. Fortalecen la orientación espacial, la planificación y el pensamiento lógico.' },
+    { id:3,  name:'Comida y Mantel',                   category:'escenarios', categoryLabel:'Escenarios', emoji:'🍎',    image:null,                             images:[],                                                                                                  bg:'linear-gradient(135deg,#fddb92,#f9a84b)', price:24000, badge:'Nuevo',        badgeClass:'new', stars:5, age:'2 a 7 años',  desc:'Aprendemos a comer mientras jugamos. Este escenario permite planificar comidas, reconocer alimentos y crear menús. El mantel puede escribirse con marcador borrable para que los niños diseñen sus propios platos. Una forma lúdica de fomentar la autonomía, la toma de decisiones y los hábitos alimentarios.' },
+    { id:4,  name:'Dinosaurios',                       category:'escenarios', categoryLabel:'Escenarios', emoji:'🦕',    image:'/static/dinos-completo.jpg',     images:['/static/dinos-completo.jpg','/static/dinos-escenario.jpg','/static/dinos-personajes.jpg'],         bg:'linear-gradient(135deg,#f6d365,#fda085)', price:24000, badge:'🔥 Hot',      badgeClass:'hot', stars:5, age:'4 a 10 años', desc:'¡Viajamos millones de años al pasado! Los dinosaurios y personajes prehistóricos estimulan la curiosidad y la construcción de relatos sobre el pasado. Dejando volar la imaginación y ubicando los dinosaurios en distintos lugares, se fortalece la motricidad fina, la memoria y la observación.' },
+    { id:5,  name:'Espacio',                           category:'escenarios', categoryLabel:'Escenarios', emoji:'🚀',    image:'/static/espacio-completo.jpg',   images:['/static/espacio-completo.jpg','/static/espacio-escenario.jpg','/static/espacio-personajes.jpg'],   bg:'linear-gradient(135deg,#1a1a2e,#16213e)', price:24000, badge:'Nuevo',        badgeClass:'new', stars:5, age:'4 a 10 años', desc:'Imaginar, investigar y crear nuevos mundos. Cohetes, astronautas y marcianos convierten cada partida en una misión espacial única. Los niños crean mundos nuevos e imaginan formas de vida diferentes. Estimula la creatividad, la resolución de problemas y el pensamiento flexible.' },
+    { id:6,  name:'La Granja',                         category:'escenarios', categoryLabel:'Escenarios', emoji:'🐄',    image:'/static/granja.jpg',             images:['/static/granja.jpg'],                                                                              bg:'linear-gradient(135deg,#fbc2eb,#a6c1ee)', price:24000, badge:null,          badgeClass:null, stars:5, age:'2 a 7 años',  desc:'Conocemos la vida en el campo. Los personajes, el tractor, la cosechadora y el molino permiten descubrir cómo es la vida de una familia rural y conocer los animales que viven allí. Despierta la curiosidad, amplía el vocabulario y promueve el respeto por los animales y la naturaleza.' },
+    { id:7,  name:'La Plaza',                          category:'escenarios', categoryLabel:'Escenarios', emoji:'🌳',    image:'/static/plaza-completo.jpg',     images:['/static/plaza-completo.jpg','/static/plaza-escenario.jpg','/static/plaza-personajes.jpg'],         bg:'linear-gradient(135deg,#d4fc79,#96e6a1)', price:24000, badge:null,          badgeClass:null, stars:5, age:'2 a 6 años',  desc:'El escenario de la plaza con toboganes, hamacas, árboles y amigos. Un clásico para estimular el juego social y la imaginación.' },
+    { id:8,  name:'Princesas, Príncipes y Unicornios', category:'escenarios', categoryLabel:'Escenarios', emoji:'🏰',    image:'/static/princesas-completo.jpg', images:['/static/princesas-completo.jpg','/static/princesas-escenario.jpg','/static/princesas-personajes.jpg'], bg:'linear-gradient(135deg,#f093fb,#667eea)', price:24000, badge:null,          badgeClass:null, stars:5, age:'3 a 8 años',  desc:'Castillos, príncipes, princesas, caballeros, hadas y unicornios en un escenario de fantasía. Para los más soñadores.' },
+    { id:9,  name:'Selva',                             category:'escenarios', categoryLabel:'Escenarios', emoji:'🦁',    image:'/static/selva-completo.jpg',     images:['/static/selva-completo.jpg','/static/selva-escenario.jpg','/static/selva-personajes.jpg'],         bg:'linear-gradient(135deg,#84fab0,#8fd3f4)', price:24000, badge:null,          badgeClass:null, stars:5, age:'3 a 8 años',  desc:'León, jirafa, elefante, mono, tigre y muchos más en un exuberante escenario selvático.' },
 
     // ── CALENDARIOS ──
     { id:10, name:'Calendario',              category:'calendarios', categoryLabel:'Calendarios', emoji:'📅',  image:null, images:[], bg:'linear-gradient(135deg,#f7971e,#ffd200)', price:null, badge:'Nuevo', badgeClass:'new', stars:5, age:'3 a 8 años', desc:'Calendario magnético didáctico para aprender los días, meses, estaciones y el clima. Perfecto para jardín y hogar.' },
@@ -1926,8 +1917,7 @@
     { id:16, name:'Personajes de Dinosaurios',           category:'personajes', categoryLabel:'Personajes', emoji:'🦕',          image:'/static/dinos-personajes.jpg',   images:['/static/dinos-personajes.jpg'],   bg:'linear-gradient(135deg,#f6d365,#fda085)', price:null, badge:null, badgeClass:null, stars:5, age:'4 a 10 años', desc:'Los dinosaurios y cavernícolas del escenario prehistórico, sueltos para jugar libremente.' },
     { id:17, name:'Personajes de La Granja',             category:'personajes', categoryLabel:'Personajes', emoji:'🐓',          image:null,                             images:[],                                 bg:'linear-gradient(135deg,#fbc2eb,#a6c1ee)', price:null, badge:null, badgeClass:null, stars:5, age:'2 a 7 años',  desc:'El granjero, gauchito y todos los animales de la granja para jugar sueltos o con el escenario.' },
     { id:18, name:'Personajes de Selva',                 category:'personajes', categoryLabel:'Personajes', emoji:'🐆',          image:'/static/selva-personajes.jpg',   images:['/static/selva-personajes.jpg'],   bg:'linear-gradient(135deg,#84fab0,#8fd3f4)', price:null, badge:null, badgeClass:null, stars:5, age:'3 a 8 años',  desc:'Los animales salvajes de la selva: león, jirafa, elefante y más, listos para nuevas aventuras.' },
-    { id:19, name:'Personajes de Animales',              category:'personajes', categoryLabel:'Personajes', emoji:'🐼',          image:'/static/selva-personajes.jpg',   images:['/static/selva-personajes.jpg'],   bg:'linear-gradient(135deg,#c3f0ca,#a8edea)', price:null, badge:null, badgeClass:null, stars:5, age:'2 a 7 años',  desc:'Los animales más queridos en formato personaje magnético para jugar solo o con el escenario.' },
-    { id:20, name:'Personajes de Espacio',               category:'personajes', categoryLabel:'Personajes', emoji:'👨‍🚀',        image:'/static/espacio-personajes.jpg', images:['/static/espacio-personajes.jpg'], bg:'linear-gradient(135deg,#1a1a2e,#16213e)', price:null, badge:null, badgeClass:null, stars:5, age:'4 a 10 años', desc:'Astronautas, aliens y exploradores del espacio para completar el escenario intergaláctico.' },
+{ id:20, name:'Personajes de Espacio',               category:'personajes', categoryLabel:'Personajes', emoji:'👨‍🚀',        image:'/static/espacio-personajes.jpg', images:['/static/espacio-personajes.jpg'], bg:'linear-gradient(135deg,#1a1a2e,#16213e)', price:null, badge:null, badgeClass:null, stars:5, age:'4 a 10 años', desc:'Astronautas, aliens y exploradores del espacio para completar el escenario intergaláctico.' },
     { id:21, name:'Personajes de Príncipes y Princesas', category:'personajes', categoryLabel:'Personajes', emoji:'🏰',          image:'/static/princesas-personajes.jpg',images:['/static/princesas-personajes.jpg'],bg:'linear-gradient(135deg,#f093fb,#667eea)', price:null, badge:null, badgeClass:null, stars:5, age:'3 a 8 años',  desc:'Príncipes, princesas, caballeros, hadas y unicornios para poblar el castillo encantado.' },
     { id:22, name:'Personajes de Barco Pirata',          category:'personajes', categoryLabel:'Personajes', emoji:'🦜',          image:'/static/barco-personajes.jpg',   images:['/static/barco-personajes.jpg'],   bg:'linear-gradient(135deg,#4facfe,#00f2fe)', price:null, badge:null, badgeClass:null, stars:5, age:'4 a 10 años', desc:'Piratas, sirenas y marineros para las aventuras en alta mar del barco pirata.' },
   ];
