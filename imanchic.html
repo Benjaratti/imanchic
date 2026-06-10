@@ -1480,6 +1480,29 @@
       </div>
     </div>
   </div>
+
+  <div class="hero-visual">
+    <div class="hero-card" onclick="filterAndScroll('escenarios')">
+      <span class="hero-card-emoji">🏠</span>
+      <h4>Casa y Familia</h4>
+      <div class="hero-card-price">$24.000</div>
+    </div>
+    <div class="hero-card" onclick="filterAndScroll('escenarios')">
+      <span class="hero-card-emoji">🦕</span>
+      <h4>Dinosaurios</h4>
+      <div class="hero-card-price">$24.000</div>
+    </div>
+    <div class="hero-card" onclick="filterAndScroll('escenarios')">
+      <span class="hero-card-emoji">🦁</span>
+      <h4>Selva</h4>
+      <div class="hero-card-price">$24.000</div>
+    </div>
+    <div class="hero-card" onclick="filterAndScroll('escenarios')">
+      <span class="hero-card-emoji">🏴‍☠️</span>
+      <h4>Barco Pirata</h4>
+      <div class="hero-card-price">$24.000</div>
+    </div>
+  </div>
 </section>
 
 <!-- TRUST BAR -->
@@ -1506,12 +1529,50 @@
   </div>
 </div>
 
+<!-- CATEGORIES -->
+<section class="categories">
+  <div class="section-header">
+    <div class="section-eyebrow">Categorías</div>
+    <h2 class="section-title">¿Qué estás buscando?</h2>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card" data-cat="escenarios" onclick="filterAndScroll('escenarios')">
+      <span class="cat-emoji">🏡</span>
+      <div class="cat-label">Escenarios</div>
+      <div class="cat-count">10 modelos</div>
+    </div>
+    <div class="cat-card" data-cat="calendarios" onclick="filterAndScroll('calendarios')">
+      <span class="cat-emoji">📅</span>
+      <div class="cat-label">Calendarios</div>
+      <div class="cat-count">1 modelo</div>
+    </div>
+    <div class="cat-card" data-cat="nene_nena" onclick="filterAndScroll('nene_nena')">
+      <span class="cat-emoji">👦</span>
+      <div class="cat-label">Nene y Nena</div>
+      <div class="cat-count">2 modelos</div>
+    </div>
+    <div class="cat-card" data-cat="personajes" onclick="filterAndScroll('personajes')">
+      <span class="cat-emoji">🎭</span>
+      <div class="cat-label">Personajes</div>
+      <div class="cat-count">10 modelos</div>
+    </div>
+  </div>
+</section>
+
 <!-- PRODUCTS -->
 <section class="products-section" id="productos">
   <div class="section-header">
     <div class="section-eyebrow">Colección</div>
     <h2 class="section-title">Nuestros Juegos</h2>
     <p class="section-sub">Cada pieza diseñada para estimular la imaginación y el aprendizaje.</p>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterProducts('all', this)">Todos</button>
+    <button class="filter-btn" onclick="filterProducts('escenarios', this)">🏡 Escenarios</button>
+    <button class="filter-btn" onclick="filterProducts('calendarios', this)">📅 Calendarios</button>
+    <button class="filter-btn" onclick="filterProducts('nene_nena', this)">👦 Nene y Nena</button>
+    <button class="filter-btn" onclick="filterProducts('personajes', this)">🎭 Personajes</button>
   </div>
 
   <div class="products-grid" id="productsGrid"></div>
@@ -1691,60 +1752,6 @@
         <div>
           <div class="testi-name">Carolina M.</div>
           <div class="testi-meta">Rosario · Maestra jardinera</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOBRE NOSOTROS -->
-<section id="nosotros" style="background:white; padding:80px;">
-  <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;">
-    <div>
-      <div class="section-eyebrow">Nuestra historia</div>
-      <h2 class="section-title" style="text-align:left; margin-bottom:20px;">Hechos con <span style="color:var(--red)">amor</span> desde Buenos Aires</h2>
-      <p style="font-size:16px; color:#555; line-height:1.8; margin-bottom:20px;">Imanchic nació de una idea simple: que los chicos aprendan mientras juegan, y que cada juguete sea una excusa para conectar en familia.</p>
-      <p style="font-size:16px; color:#555; line-height:1.8; margin-bottom:20px;">Cada pieza está fabricada con madera certificada y pinturas al agua no tóxicas. Diseñamos los escenarios pensando en la estimulación cognitiva, el desarrollo del lenguaje y la motricidad fina.</p>
-      <p style="font-size:16px; color:#555; line-height:1.8; margin-bottom:36px;">Lo que empezó en casa hoy llega a familias de todo el país. Cada pedido se arma con el mismo cuidado del primer día.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-        <div style="text-align:center; padding:24px; background:var(--gray); border-radius:16px;">
-          <div style="font-family:'Fredoka One',cursive; font-size:36px; color:var(--red);">+500</div>
-          <div style="font-size:13px; font-weight:700; color:var(--muted); margin-top:4px;">Familias felices</div>
-        </div>
-        <div style="text-align:center; padding:24px; background:var(--gray); border-radius:16px;">
-          <div style="font-family:'Fredoka One',cursive; font-size:36px; color:var(--red);">100%</div>
-          <div style="font-size:13px; font-weight:700; color:var(--muted); margin-top:4px;">Madera natural</div>
-        </div>
-        <div style="text-align:center; padding:24px; background:var(--gray); border-radius:16px;">
-          <div style="font-family:'Fredoka One',cursive; font-size:36px; color:var(--red);">⭐ 4.9</div>
-          <div style="font-size:13px; font-weight:700; color:var(--muted); margin-top:4px;">Calificación promedio</div>
-        </div>
-        <div style="text-align:center; padding:24px; background:var(--gray); border-radius:16px;">
-          <div style="font-family:'Fredoka One',cursive; font-size:36px; color:var(--red);">+7</div>
-          <div style="font-size:13px; font-weight:700; color:var(--muted); margin-top:4px;">Modelos de juegos</div>
-        </div>
-      </div>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:20px;">
-      <div style="background:linear-gradient(135deg,#fff9e6,#fff0f0); border-radius:20px; padding:28px; display:flex; gap:20px; align-items:flex-start;">
-        <div style="font-size:40px; flex-shrink:0;">🌳</div>
-        <div>
-          <div style="font-size:16px; font-weight:800; margin-bottom:6px;">Materiales seguros</div>
-          <div style="font-size:14px; color:#666; line-height:1.6;">Madera certificada y pinturas al agua no tóxicas. Probado y seguro para bebés desde los 2 años.</div>
-        </div>
-      </div>
-      <div style="background:linear-gradient(135deg,#f0fff4,#e6f7ff); border-radius:20px; padding:28px; display:flex; gap:20px; align-items:flex-start;">
-        <div style="font-size:40px; flex-shrink:0;">🧠</div>
-        <div>
-          <div style="font-size:16px; font-weight:800; margin-bottom:6px;">Diseño pedagógico</div>
-          <div style="font-size:14px; color:#666; line-height:1.6;">Cada juego estimula áreas clave del desarrollo: lenguaje, creatividad, motricidad y pensamiento lógico.</div>
-        </div>
-      </div>
-      <div style="background:linear-gradient(135deg,#fff0f0,#fff9e6); border-radius:20px; padding:28px; display:flex; gap:20px; align-items:flex-start;">
-        <div style="font-size:40px; flex-shrink:0;">🇦🇷</div>
-        <div>
-          <div style="font-size:16px; font-weight:800; margin-bottom:6px;">Hecho en Argentina</div>
-          <div style="font-size:14px; color:#666; line-height:1.6;">Producción local, con orgullo. Cada pieza sale de Buenos Aires y llega a todo el país.</div>
         </div>
       </div>
     </div>
