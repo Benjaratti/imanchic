@@ -1238,6 +1238,17 @@
 
     .modal-desc { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px; }
 
+    .presentacion-selector { margin: 0 0 20px; }
+    .presentacion-label { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+    .presentacion-btns { display: flex; gap: 10px; }
+    .pres-btn {
+      flex: 1; padding: 12px 8px; border: 2px solid #ddd; border-radius: 12px;
+      background: white; cursor: pointer; font-size: 14px; font-weight: 700;
+      color: #666; text-align: center; transition: all 0.2s;
+    }
+    .pres-btn.active { border-color: var(--red); background: #fff5f5; color: var(--red); }
+    .pres-btn:hover { border-color: var(--red); }
+
     .modal-actions { display: flex; flex-direction: column; gap: 10px; }
 
     .btn-comprar {
@@ -1853,6 +1864,13 @@
           <div class="modal-feature"><span>✓</span><span>Hacemos Juegos Personalizados</span></div>
           <div class="modal-feature"><span>✓</span><span>Ventas por mayor y menor</span></div>
         </div>
+        <div class="presentacion-selector">
+          <div class="presentacion-label">¿Cómo lo querés recibir?</div>
+          <div class="presentacion-btns">
+            <button class="pres-btn active" id="presBolsa" onclick="selectPresentacion('bolsa')">🛍️ Con bolsa</button>
+            <button class="pres-btn" id="presCaja" onclick="selectPresentacion('caja')">📦 Con caja</button>
+          </div>
+        </div>
         <div class="modal-actions">
           <button class="btn-comprar" onclick="addToCartFromModal()">🛒 Agregar al carrito</button>
           <a id="modalWa" href="#" target="_blank" class="btn-wa">💬 Consultar por WhatsApp</a>
@@ -1985,10 +2003,20 @@
   }
 
   function addToCartFromModal() {
-    if (currentModalId !== null) {
-      addToCart(currentModalId);
-      closeModal();
+    if (currentModalId === null) return;
+    const p = products.find(x => x.id === currentModalId);
+    if (!p) return;
+    const pres = presentacionActual === 'bolsa' ? '🛍️ Con bolsa' : '📦 Con caja';
+    const key = `${p.id}_${presentacionActual}`;
+    const existing = cart.find(i => i._key === key);
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({ ...p, qty: 1, presentacion: pres, _key: key });
     }
+    updateCartUI();
+    openCart();
+    closeModal();
   }
 
   function updateCartUI() {
@@ -2015,30 +2043,31 @@
           <span class="cart-item-emoji">${i.emoji}</span>
           <div class="cart-item-info">
             <div class="cart-item-name">${i.name}</div>
+            <div style="font-size:12px;color:#888;margin-bottom:2px;">${i.presentacion || ''}</div>
             <div class="cart-item-price">$${(i.price * i.qty).toLocaleString('es-AR')}</div>
             <div class="cart-item-qty">
-              <button class="qty-btn" onclick="changeQty(${i.id}, -1)">−</button>
+              <button class="qty-btn" onclick="changeQty('${i._key}', -1)">−</button>
               <span class="qty-num">${i.qty}</span>
-              <button class="qty-btn" onclick="changeQty(${i.id}, 1)">+</button>
+              <button class="qty-btn" onclick="changeQty('${i._key}', 1)">+</button>
             </div>
           </div>
-          <button class="cart-remove" onclick="removeItem(${i.id})">🗑</button>
+          <button class="cart-remove" onclick="removeItem('${i._key}')">🗑</button>
         </div>`).join('');
       footerEl.style.display = 'block';
       document.getElementById('cartTotal').textContent = '$' + total.toLocaleString('es-AR');
     }
   }
 
-  function changeQty(id, delta) {
-    const item = cart.find(i => i.id === id);
+  function changeQty(key, delta) {
+    const item = cart.find(i => i._key === key);
     if (!item) return;
     item.qty += delta;
-    if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+    if (item.qty <= 0) cart = cart.filter(i => i._key !== key);
     updateCartUI();
   }
 
-  function removeItem(id) {
-    cart = cart.filter(i => i.id !== id);
+  function removeItem(key) {
+    cart = cart.filter(i => i._key !== key);
     updateCartUI();
   }
 
@@ -2054,7 +2083,7 @@
 
   function checkout() {
     if (cart.length === 0) return;
-    const lines = cart.map(i => `• ${i.name} x${i.qty} — $${(i.price * i.qty).toLocaleString('es-AR')}`).join('\n');
+    const lines = cart.map(i => `• ${i.name} ${i.presentacion || ''} x${i.qty} — $${(i.price * i.qty).toLocaleString('es-AR')}`).join('\n');
     const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
     const msg = `Hola! Quiero hacer este pedido:\n\n${lines}\n\nTotal: $${total.toLocaleString('es-AR')}\n\n¿Cómo seguimos? 😊`;
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
@@ -2115,12 +2144,25 @@
     // Descripción
     document.getElementById('modalDesc').textContent = p.desc;
 
-    // WhatsApp
-    const waMsg = `Hola! Vi en la web el juego "${p.name}" ($${p.price.toLocaleString('es-AR')}) y quiero más info ✨`;
-    document.getElementById('modalWa').href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMsg)}`;
+    // Reset presentación a bolsa
+    selectPresentacion('bolsa');
 
     document.getElementById('modalOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
+  }
+
+  let presentacionActual = 'bolsa';
+
+  function selectPresentacion(tipo) {
+    presentacionActual = tipo;
+    document.getElementById('presBolsa').classList.toggle('active', tipo === 'bolsa');
+    document.getElementById('presCaja').classList.toggle('active', tipo === 'caja');
+    const p = products.find(x => x.id === currentModalId);
+    if (!p) return;
+    const pres = tipo === 'bolsa' ? '🛍️ Con bolsa' : '📦 Con caja';
+    const precio = p.price ? `$${p.price.toLocaleString('es-AR')}` : 'a consultar';
+    const waMsg = `Hola! Vi en la web el juego "${p.name}" (${precio}) y lo quiero ${pres} ✨`;
+    document.getElementById('modalWa').href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMsg)}`;
   }
 
   function closeModal() {
